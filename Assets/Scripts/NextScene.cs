@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Kino;
 
 public class NextScene : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class NextScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
         canvas = GameManager.Instance.UI_blackCanvas;
         animator = canvas.transform.Find("Black").GetComponent<Animator>();
         isActive = false;
@@ -28,10 +28,12 @@ public class NextScene : MonoBehaviour
 
     IEnumerator LoadScene(int index)
     {
+        SetGlitch(0.2f);
+        yield return new WaitForSeconds(1.5f);
+        SetGlitch(0.5f);
         animator.SetBool("fadeIn", true);
         animator.SetBool("fadeOut", false);
-
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         AsyncOperation async = SceneManager.LoadSceneAsync(index);
         async.completed += OnLoadedScene;
 
@@ -44,6 +46,15 @@ public class NextScene : MonoBehaviour
 
         GameManager.Instance.ruinList.Clear();
         GameManager.Instance.RefreshStatusUI();
+    }
+
+    private void SetGlitch(float intensity) {
+        GameObject camera = GameObject.Find("Main Camera");
+        camera.GetComponent<DigitalGlitch>().intensity = 0.2f * intensity;
+        camera.GetComponent<AnalogGlitch>().scanLineJitter = 0.5f * intensity;
+        camera.GetComponent<AnalogGlitch>().verticalJump = 0.5f * intensity;
+        camera.GetComponent<AnalogGlitch>().horizontalShake = 0.5f * intensity;
+        camera.GetComponent<AnalogGlitch>().colorDrift = 0.5f * intensity;
     }
 
 }
