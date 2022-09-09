@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Border
+  - DeadZone
+  - SavePoint
+  - Fragile
+  - Enemy
+  - Ruin
+  - Door
+  - Spike
+  - Info
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - Ground
+  - 
+  - TriggerBox
+  - 
+  - NPC
+  - 
+  - Enemy
+  - 
+  - 
+  - Player
+  - 
+  - 
+  - Ruin
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 3341355307
+    locked: 0
+  - name: Block
+    uniqueID: 1748090307
+    locked: 0
+  - name: NPC
+    uniqueID: 681534261
+    locked: 0
+  - name: Artifact
+    uniqueID: 4253837767
+    locked: 0
+  - name: Player
+    uniqueID: 2740228689
+    locked: 0
+  - name: UI
+    uniqueID: 859939129
+    locked: 0
+  - name: VFX
+    uniqueID: 4093359309
+    locked: 0

@@ -1,0 +1,2 @@
+E:\UnityProjects\Rebirth\obj\Debug\Fungus.csproj.AssemblyReference.cache
+E:\UnityProjects\Rebirth\obj\Debug\Fungus.csproj.CoreCompileInputs.cache
