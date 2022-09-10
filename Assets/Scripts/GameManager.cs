@@ -18,6 +18,8 @@ public class GameManager : Singleton<GameManager>
     public UI_StatusImg UI_StatusImg;                   // 形态UI
     public TextMeshProUGUI UI_StatusText;                    // 文字UI
 
+    public GameObject barragePanel;
+
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject platformPrefab;
@@ -44,7 +46,21 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-
+        // trigger barrage test
+        if(Input.GetKeyDown(KeyCode.B)) {
+            List<string> x = new List<string>();
+            x.Add("11111111111");
+            x.Add("22222222222222");
+            x.Add("3333333333333333");
+            x.Add("44444444444");
+            x.Add("5555555");
+            x.Add("6666666");
+            x.Add("77777");
+            x.Add("88888");
+            x.Add("999999999999999");
+            x.Add("1010101010");
+            barragePanel.GetComponent<Barrage>().TriggerBarrage(x);
+        }
     }
 
     /***

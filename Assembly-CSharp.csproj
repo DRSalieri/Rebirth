@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
      <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
+     <Compile Include="Assets\Scripts\Barrage.cs" />
      <Compile Include="Assets\Scripts\ComputerStation.cs" />
      <Compile Include="Assets\Scripts\EnemyAnim.cs" />
      <Compile Include="Assets\Scripts\EnemyGenerator.cs" />
