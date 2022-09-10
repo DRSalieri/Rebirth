@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FungusExamples", "FungusExa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FungusEditor", "FungusEditor.csproj", "{aa33927a-7625-615f-f07d-de722fd5a2bf}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{3f5e6ea5-44c2-1c82-eada-44d90cbd2232}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fungus.FungusLuaEditor", "Fungus.FungusLuaEditor.csproj", "{d8161ad0-34a0-2a25-68fb-d4384cc872e5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fungus.LineEndingsEditor", "Fungus.LineEndingsEditor.csproj", "{e879ba0f-4ae4-c5cf-375b-12d540ac5786}"
@@ -16,8 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fungus.FungusLuaJSONCheckerEditor", "Fungus.FungusLuaJSONCheckerEditor.csproj", "{3f6b93a0-9b22-c2aa-a6ea-013e6cab572d}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fungus.UsfxrEditor", "Fungus.UsfxrEditor.csproj", "{25e640af-a9d0-f233-5fcd-b799ee98c3c9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{3f5e6ea5-44c2-1c82-eada-44d90cbd2232}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +32,8 @@ Global
 		{32bac250-16c7-466e-cf18-25412a994526}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{aa33927a-7625-615f-f07d-de722fd5a2bf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{aa33927a-7625-615f-f07d-de722fd5a2bf}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3f5e6ea5-44c2-1c82-eada-44d90cbd2232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3f5e6ea5-44c2-1c82-eada-44d90cbd2232}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d8161ad0-34a0-2a25-68fb-d4384cc872e5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d8161ad0-34a0-2a25-68fb-d4384cc872e5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{e879ba0f-4ae4-c5cf-375b-12d540ac5786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -40,8 +42,6 @@ Global
 		{3f6b93a0-9b22-c2aa-a6ea-013e6cab572d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25e640af-a9d0-f233-5fcd-b799ee98c3c9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{25e640af-a9d0-f233-5fcd-b799ee98c3c9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3f5e6ea5-44c2-1c82-eada-44d90cbd2232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3f5e6ea5-44c2-1c82-eada-44d90cbd2232}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
