@@ -2,9 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class EnemyMove : MonoBehaviour
 {
+    // 跳跃相关
+    public int JumpCount;       // 可跳跃次数
+    [SerializeField] private int _JumpCount;      // 剩余可跳跃次数
+    [SerializeField] public bool jumpPressed;
+    public RaycastHit2D groundHit;
+
     [SerializeField] private Rigidbody2D rb;
     public Collider2D normalColl;
     public Collider2D diedColl;
@@ -20,9 +27,17 @@ public class EnemyMove : MonoBehaviour
     public float beforeX;
     public float remainTime;
 
+    [SerializeField] private bool _isControlled = false;
+
     public AudioSource diedAudio;
+    [SerializeField] private AudioSource jumpAudio;
+
+    public CinemachineVirtualCamera camera;
+
     void Start()
     {
+        camera = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
+        JumpCount = 1;
         remainTime = 0.5f;
         beforeX = transform.position.x;
         // 碰撞体设置
@@ -38,6 +53,82 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.C)) {
+            if (_isControlled) {
+                ChangeControl(false);
+            } else {
+                ChangeControl(true);
+            }
+        }
+        if (_isControlled) {
+            ControlUpdate();
+        } else {
+            DefaultUpdate();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (_isControlled) {
+            ControlFixed();
+        }
+        
+    }
+
+    public void ChangeControl(bool controlled) {
+        _isControlled = controlled;
+        if (_isControlled) {
+            rb.velocity = new Vector2(0, 0);
+            gameObject.tag = "Friend";
+            camera.Follow = this.transform;
+        } else {
+
+        }
+    }
+
+    private void ControlMove()
+    {
+        float horizontalMove = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+
+        // 通过改变spriteTrans的localScale的x值，实现左右翻转
+        if (horizontalMove != 0)
+        {
+            spriteTrans.localScale = new Vector3(horizontalMove * Mathf.Abs(spriteTrans.localScale.x), Mathf.Abs(spriteTrans.localScale.y), 1);
+        }
+    }
+
+    private void ControlUpdate() {
+            if (isDied)
+                return;
+            if (rb == null)
+                return;
+
+            if (Input.GetButtonDown("Jump") && _JumpCount > 0)
+            {
+                jumpPressed = true;
+            }
+
+            ControlMove();
+    }
+
+    void ControlFixed() {
+        if (isDied)
+            return;
+        if (rb == null)
+            return;
+
+        groundHit = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.1f, LayerMask.GetMask("Ruin", "Ground"));
+
+        if (groundHit.collider != null)
+            isGround = true;
+        else isGround = false;
+
+        ControlMove();
+        ControlJump();
+    }
+
+    void DefaultUpdate() {
         if (!isDied)
         {
             isGround = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.1f, LayerMask.GetMask("Ruin", "Ground"));
@@ -55,6 +146,7 @@ public class EnemyMove : MonoBehaviour
             }
 
             Movement();
+            
             if (faceLeft)
                 spriteTrans.localScale = new Vector3(-1, 1, 1);
             else
@@ -63,6 +155,7 @@ public class EnemyMove : MonoBehaviour
             SwitchAnim();
         }
     }
+
     private void SwitchAnim()
     {
         anim.SetBool("IsGround", isGround);
@@ -76,9 +169,27 @@ public class EnemyMove : MonoBehaviour
         diedColl.enabled = true;
         anim.SetTrigger("IsDied");
     }
-    private void Jump()
-    {
+
+    private void Jump() {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+    }
+
+    private void ControlJump()
+    {
+        if (isGround)
+        {
+            _JumpCount = JumpCount;
+        }
+
+        // 起跳
+        if (jumpPressed)
+        {
+            jumpAudio.Play();
+            //isJump = true;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            _JumpCount--;
+            jumpPressed = false;
+        }
     }
 
     void Movement()

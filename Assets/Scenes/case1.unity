@@ -1629,6 +1629,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5127674168350613847, guid: 49d31fe72c8751f42ac38b19b2ef625a,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 971197924}
+    - target: {fileID: 5127674168350613847, guid: 49d31fe72c8751f42ac38b19b2ef625a,
+        type: 3}
+      propertyPath: isControlled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5127674168557890004, guid: 49d31fe72c8751f42ac38b19b2ef625a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9767,6 +9777,7 @@ MonoBehaviour:
   barragePrefab: {fileID: 191319049506022197, guid: 3ca7b057632c5984cafd579d31779a21,
     type: 3}
   barragePanel: {fileID: 1092797731303189576}
+  _barrages: []
 --- !u!114 &1092797731303189616
 MonoBehaviour:
   m_ObjectHideFlags: 0

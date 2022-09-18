@@ -61,6 +61,7 @@ public class GameManager : Singleton<GameManager>
             x.Add("1010101010");
             barragePanel.GetComponent<Barrage>().TriggerBarrage(x);
         }
+        
     }
 
     /***

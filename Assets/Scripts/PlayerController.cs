@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource diedAudio;
     [SerializeField] private AudioSource jumpAudio;
 
+    private bool _isControlled = true;
+
     private void Start()
     {
         canOperate = true;
@@ -83,61 +85,87 @@ public class PlayerController : MonoBehaviour
         SwitchShape(shape);
     }
 
+    public void ChangeControl(bool controlled) {
+        _isControlled = controlled;
+        if (_isControlled) {
+
+        } else {
+            rb.velocity = new Vector2(0, 0);
+        }
+    }
+
     private void Update()
     {
-        if (canOperate == false)
-            return;
-        if (isDied)
-            return;
-        if (rb == null || coll == null)
-            return;
-        // 更新这一帧的各种状态
-
-        /*
-        groundHit = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.1f, ground);
-        
-        if(groundHit.collider != null)
-            isGround = true;
-        else isGround = false;
-        */
-
-        //isJump = !isGround;
-        useSkill = Input.GetButtonDown("Skill");
-        isInteracting = Input.GetButtonDown("Interact");
-        isBooming = Input.GetButtonDown("Boom");
-        isRun = (Mathf.Abs(rb.velocity.x) > 0.1f);
-
-        if (Input.GetButtonDown("Jump") && _JumpCount > 0)
-        {
-            jumpPressed = true;
+        if(Input.GetKeyDown(KeyCode.C)) {
+            if (_isControlled) {
+                ChangeControl(false);
+            } else {
+                ChangeControl(true);
+            }
         }
 
-        // 操作
-        //Jump();
-        Skill();
-        Boom();
-        Interact();
-        Crush();
-        
+        if (_isControlled) {
 
-        SwitchAnim();
+
+            if (canOperate == false)
+                return;
+            if (isDied)
+                return;
+            if (rb == null || coll == null)
+                return;
+            // 更新这一帧的各种状态
+
+            /*
+            groundHit = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.1f, ground);
+            
+            if(groundHit.collider != null)
+                isGround = true;
+            else isGround = false;
+            */
+
+            //isJump = !isGround;
+            useSkill = Input.GetButtonDown("Skill");
+            isInteracting = Input.GetButtonDown("Interact");
+            isBooming = Input.GetButtonDown("Boom");
+            isRun = (Mathf.Abs(rb.velocity.x) > 0.1f);
+
+            if (Input.GetButtonDown("Jump") && _JumpCount > 0)
+            {
+                jumpPressed = true;
+            }
+
+            // 操作
+            //Jump();
+            Skill();
+            Boom();
+            Interact();
+            Crush();
+            
+            
+
+            SwitchAnim();
+        }
     }
     private void FixedUpdate()
     {
-        if (isDied)
-            return;
-        if (rb == null || coll == null)
-            return;
+        if (_isControlled) {
+            if (isDied)
+                return;
+            if (rb == null || coll == null)
+                return;
 
-        groundHit = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.1f, LayerMask.GetMask("Ruin", "Ground"));
+            groundHit = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.1f, LayerMask.GetMask("Ruin", "Ground"));
 
-        if (groundHit.collider != null)
-            isGround = true;
-        else isGround = false;
+            if (groundHit.collider != null)
+                isGround = true;
+            else isGround = false;
 
-        Movement();
-        Jump();
+            Movement();
+            Jump();
+        }
+        
     }
+
     private void SwitchAnim()
     {
         anim.SetBool("IsRun", isRun);
