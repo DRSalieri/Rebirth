@@ -252,6 +252,10 @@ public class PlayerController : MonoBehaviour
                 {
                     InfoBoard IB = npcColl.GetComponent<InfoBoard>();
                     IB.ExecutePositiveBlock();
+                } else if(npcColl.tag == "Switch")
+                {
+                    GroundSwitch GS = npcColl.GetComponent<GroundSwitch>();
+                    GS.ClickButton();
                 }
             }
         }

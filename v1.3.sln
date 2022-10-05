@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fungus", "Fungus.csproj", "{E50E3383-19E6-CEC4-222C-418BCA0EA5EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{3107516B-45A6-5BD5-BC5F-F587BE07AFAB}"
@@ -8,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FungusExamples", "FungusExamples.csproj", "{9C96962A-E149-8B6F-3948-29B0C4142E29}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FungusEditor", "FungusEditor.csproj", "{F8D4165E-90F8-77FB-4DE5-707506057619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{BF2AEDAE-3B02-1E56-702A-82EBF71892D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fungus.FungusLuaEditor", "Fungus.FungusLuaEditor.csproj", "{E8E393F4-698F-D190-942A-13131DBFE9BB}"
 EndProject
@@ -39,6 +41,10 @@ Global
 		{F8D4165E-90F8-77FB-4DE5-707506057619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D4165E-90F8-77FB-4DE5-707506057619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8D4165E-90F8-77FB-4DE5-707506057619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF2AEDAE-3B02-1E56-702A-82EBF71892D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2AEDAE-3B02-1E56-702A-82EBF71892D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2AEDAE-3B02-1E56-702A-82EBF71892D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2AEDAE-3B02-1E56-702A-82EBF71892D7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8E393F4-698F-D190-942A-13131DBFE9BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8E393F4-698F-D190-942A-13131DBFE9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E393F4-698F-D190-942A-13131DBFE9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
