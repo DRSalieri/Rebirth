@@ -243,7 +243,7 @@ public class PlayerController : MonoBehaviour
                 {
                     ComputerStation cs = npcColl.GetComponent<ComputerStation>();
                     cs.Save();
-                    SwitchShape(cs.shape);
+                    // SwitchShape(cs.shape);
                 } else if(npcColl.tag == "Door")
                 {
                     NextScene nextScene = npcColl.GetComponent<NextScene>();
@@ -332,6 +332,10 @@ public class PlayerController : MonoBehaviour
                 GameManager.Instance.Rebirth();
             }
             else if(other.tag == "Spike")
+            {
+                Died(false);
+            }
+            else if(other.tag == "Lazer")
             {
                 Died(false);
             }

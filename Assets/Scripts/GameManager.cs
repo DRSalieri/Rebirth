@@ -24,8 +24,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject platformPrefab;
 
-    [SerializeField] private Sprite computerGreen;
-    [SerializeField] private Sprite computerRed;
+    [SerializeField] private Sprite savePointOff;
+    [SerializeField] private Sprite savePointOn;
 
 
     // Start is called before the first frame update
@@ -159,7 +159,7 @@ public class GameManager : Singleton<GameManager>
         if(nowSavePoint != null)
         {
             // 有存档点时，切换形态
-            new_player.GetComponent<PlayerController>().shape = nowSavePoint.shape;
+            // new_player.GetComponent<PlayerController>().shape = nowSavePoint.shape;
         }
         cine.Follow = new_player.transform;
     }
@@ -169,9 +169,9 @@ public class GameManager : Singleton<GameManager>
     {
         if (nowSavePoint != null)
         {
-            nowSavePoint.GetComponent<SpriteRenderer>().sprite = computerGreen;
+            nowSavePoint.GetComponent<SpriteRenderer>().sprite = savePointOff;
         }
-        cs.GetComponent<SpriteRenderer>().sprite = computerRed;
+        cs.GetComponent<SpriteRenderer>().sprite = savePointOn;
         nowSavePoint = cs;
         spawnPos = cs.spawnPos;
     }

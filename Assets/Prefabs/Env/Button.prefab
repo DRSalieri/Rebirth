@@ -51,6 +51,12 @@ MonoBehaviour:
   buttonUp: {fileID: 21300000, guid: 19c019d7809f6da4d97fb1cc89d134ff, type: 3}
   buttonDown: {fileID: 21300000, guid: 2dc269ba63354f241845932ff16b1e1b, type: 3}
   sr: {fileID: 2096090972940330871}
+  upAction:
+    m_PersistentCalls:
+      m_Calls: []
+  downAction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &2096090971811044958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194,7 +200,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096090972940330869}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

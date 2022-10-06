@@ -5,10 +5,12 @@ using UnityEngine;
 public class ComputerStation : MonoBehaviour
 {
     public Transform spawnPos;
-    public PlayerController.ShapeType shape;
-    [SerializeField] private SpriteRenderer shapeSprite;
+    // ***存档点不再具有形态
+    // public PlayerController.ShapeType shape;
+    // [SerializeField] private SpriteRenderer shapeSprite;
     public void Start()
     {
+        /*
         switch (shape)
         {
             case PlayerController.ShapeType.Basic:
@@ -23,6 +25,7 @@ public class ComputerStation : MonoBehaviour
             default:
                 break;
         }
+        */
     }
 
     public void Save()

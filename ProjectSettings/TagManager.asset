@@ -15,6 +15,7 @@ TagManager:
   - Info
   - Friend
   - Switch
+  - Lazer
   layers:
   - Default
   - TransparentFX
