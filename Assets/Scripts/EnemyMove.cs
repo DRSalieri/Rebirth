@@ -36,7 +36,7 @@ public class EnemyMove : MonoBehaviour
 
     void Start()
     {
-        camera = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
+        camera = GameObject.Find("CM vcam2").GetComponent<CinemachineVirtualCamera>();
         JumpCount = 1;
         remainTime = 0.5f;
         beforeX = transform.position.x;

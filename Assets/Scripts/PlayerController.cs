@@ -339,6 +339,10 @@ public class PlayerController : MonoBehaviour
             {
                 Died(false);
             }
+            else if(other.tag == "Bomb")
+            {
+                Died(false);
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {

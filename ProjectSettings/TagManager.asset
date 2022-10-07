@@ -16,6 +16,7 @@ TagManager:
   - Friend
   - Switch
   - Lazer
+  - Bomb
   layers:
   - Default
   - TransparentFX

@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SayDialog
       objectReference: {fileID: 0}
+    - target: {fileID: 414116344114534610, guid: 83d3f965a6df07b45ad67b1b699a287d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 414116344114534632, guid: 83d3f965a6df07b45ad67b1b699a287d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3673,9 +3678,8 @@ MonoBehaviour:
     type: 3}
   platformPrefab: {fileID: 6204058685587797361, guid: 41b65d873b2ba4a48853d5b1941030c4,
     type: 3}
-  computerGreen: {fileID: 21300000, guid: e67f78b93db717945a5866606bb3a375, type: 3}
-  computerRed: {fileID: -1928200300737814378, guid: a7ec20ac98ac6ae45baf06692800e192,
-    type: 3}
+  savePointOff: {fileID: 0}
+  savePointOn: {fileID: 0}
 --- !u!4 &1232628370
 Transform:
   m_ObjectHideFlags: 0
