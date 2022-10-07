@@ -230,8 +230,8 @@ MonoBehaviour:
   diedColl: {fileID: 2703426312378311009}
   giantDiedColl: {fileID: 46071172}
   spriteTrans: {fileID: 4012412947333478123}
-  JumpCount: 2
-  jumpForce: 4
+  JumpCount: 1
+  jumpForce: 5.8
   canOperate: 0
   isGround: 0
   jumpPressed: 0
@@ -239,6 +239,8 @@ MonoBehaviour:
   isInteracting: 0
   isRun: 0
   isDied: 0
+  isBoom: 0
+  isBooming: 0
   ground:
     serializedVersion: 2
     m_Bits: 512
@@ -249,7 +251,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   groundCheck: {fileID: 4012412947322411162}
-  speed: 2
+  speed: 2.5
   createPoint: {fileID: 4012412948133296918}
   dialogDist: 0.7
   anim: {fileID: 1697800855}

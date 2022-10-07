@@ -7,7 +7,9 @@ public class TelescopicPlatform : MonoBehaviour
     private enum PlatformState
     {
         ToLeft,
-        ToRight
+        ToRight,
+        ToUp,
+        ToDown
     };
     [SerializeField] private PlatformState platformSate;
 
@@ -31,23 +33,37 @@ public class TelescopicPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float result = spritesTransform.position.x;
+        float result  = spritesTransform.position.x;
         if(platformSate == PlatformState.ToLeft)
         {
             if(spritesTransform.position.x > leftX)
             {
                 result -= speed * Time.deltaTime;
             }
+            spritesTransform.position = new Vector3(Mathf.Clamp(result, leftX, rightX), spritesTransform.position.y, spritesTransform.position.z);
         }
-        else
+        else if (platformSate == PlatformState.ToRight)
         {
             if(spritesTransform.position.x < rightX)
             {
                 result += speed * Time.deltaTime;
             }
+            spritesTransform.position = new Vector3(Mathf.Clamp(result, leftX, rightX), spritesTransform.position.y, spritesTransform.position.z);
+        } else {
+            result = spritesTransform.position.y;
+            if (platformSate == PlatformState.ToUp) {
+                if(spritesTransform.position.y < leftX)
+                {
+                    result += speed * Time.deltaTime;
+                }
+            } else {
+                if(spritesTransform.position.y > rightX)
+                {
+                    result -= speed * Time.deltaTime;
+                }
+            }
+            spritesTransform.position = new Vector3(spritesTransform.position.x, Mathf.Clamp(result, leftX, rightX), spritesTransform.position.z);
         }
-
-        spritesTransform.position = new Vector3(Mathf.Clamp(result, leftX, rightX), spritesTransform.position.y, spritesTransform.position.z);
     }
 
     public void MoveToLeft()
@@ -58,5 +74,14 @@ public class TelescopicPlatform : MonoBehaviour
     public void MoveToRight()
     {
         platformSate = PlatformState.ToRight;
+    }
+    public void MoveToUp()
+    {
+        platformSate = PlatformState.ToUp;
+    }
+
+    public void MoveToDown()
+    {
+        platformSate = PlatformState.ToDown;
     }
 }
