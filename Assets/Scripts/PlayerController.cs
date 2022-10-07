@@ -350,7 +350,7 @@ public class PlayerController : MonoBehaviour
         {
             if(other.gameObject.tag == "Enemy")
             {
-                if(other.gameObject.GetComponent<EnemyMove>().isDied == false)
+                if(other.gameObject.GetComponent<EnemyMove>().isDied == false && other.contacts[0].normal.y <= 0.01f)
                     Died(false);
             }
         }

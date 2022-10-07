@@ -218,9 +218,9 @@ public class EnemyMove : MonoBehaviour
     {
         if (!isDied)
         {
-            if (other.gameObject.tag == "Ruin")
+            if (other.gameObject.tag == "Player")
             {
-                if (other.contacts[0].normal.y < 0)
+                if (other.contacts[0].normal.y <= 0.01f)
                 {
                     //if (Mathf.Abs(other.gameObject.GetComponent<Rigidbody2D>().velocity.y) > 1)
                         Died();

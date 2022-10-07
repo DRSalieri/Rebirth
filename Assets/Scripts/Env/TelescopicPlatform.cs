@@ -7,13 +7,11 @@ public class TelescopicPlatform : MonoBehaviour
     private enum PlatformState
     {
         ToLeft,
-        ToRight,
-        ToUp,
-        ToDown
+        ToRight
     };
     [SerializeField] private PlatformState platformSate;
 
-    private float leftX, rightX;
+    private float leftX, rightX;            // or topY, bottomY
     [SerializeField] private Transform leftTransform;
     [SerializeField] private Transform rightTransform;
 
@@ -40,7 +38,6 @@ public class TelescopicPlatform : MonoBehaviour
             {
                 result -= speed * Time.deltaTime;
             }
-            spritesTransform.position = new Vector3(Mathf.Clamp(result, leftX, rightX), spritesTransform.position.y, spritesTransform.position.z);
         }
         else if (platformSate == PlatformState.ToRight)
         {
@@ -48,22 +45,8 @@ public class TelescopicPlatform : MonoBehaviour
             {
                 result += speed * Time.deltaTime;
             }
-            spritesTransform.position = new Vector3(Mathf.Clamp(result, leftX, rightX), spritesTransform.position.y, spritesTransform.position.z);
-        } else {
-            result = spritesTransform.position.y;
-            if (platformSate == PlatformState.ToUp) {
-                if(spritesTransform.position.y < leftX)
-                {
-                    result += speed * Time.deltaTime;
-                }
-            } else {
-                if(spritesTransform.position.y > rightX)
-                {
-                    result -= speed * Time.deltaTime;
-                }
-            }
-            spritesTransform.position = new Vector3(spritesTransform.position.x, Mathf.Clamp(result, leftX, rightX), spritesTransform.position.z);
         }
+        spritesTransform.position = new Vector3(Mathf.Clamp(result, leftX, rightX), spritesTransform.position.y, spritesTransform.position.z);
     }
 
     public void MoveToLeft()
@@ -74,14 +57,5 @@ public class TelescopicPlatform : MonoBehaviour
     public void MoveToRight()
     {
         platformSate = PlatformState.ToRight;
-    }
-    public void MoveToUp()
-    {
-        platformSate = PlatformState.ToUp;
-    }
-
-    public void MoveToDown()
-    {
-        platformSate = PlatformState.ToDown;
     }
 }

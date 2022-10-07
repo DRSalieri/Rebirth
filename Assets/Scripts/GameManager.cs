@@ -70,6 +70,8 @@ public class GameManager : Singleton<GameManager>
     *
     ***/
 
+
+
     // 在指定位置创建一个platform
     public void CreatePlatform(Vector3 pos)
     {
