@@ -79022,6 +79022,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 5829162932221959987, guid: 9ef055fddaecee7408f3927aa945a9ad,
+        type: 3}
+      propertyPath: maxNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829162932221959987, guid: 9ef055fddaecee7408f3927aa945a9ad,
+        type: 3}
+      propertyPath: geneTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef055fddaecee7408f3927aa945a9ad, type: 3}
 --- !u!1 &879836884
