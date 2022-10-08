@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\GeneStartTrigger.cs" />
      <Compile Include="Assets\Scripts\InfoBoard.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
+     <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\MySceneManager.cs" />
      <Compile Include="Assets\Scripts\NextScene.cs" />
      <Compile Include="Assets\Scripts\PlayerAnim.cs" />
