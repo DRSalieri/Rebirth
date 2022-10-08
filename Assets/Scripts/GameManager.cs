@@ -45,23 +45,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     void Update()
-    {
-        // trigger barrage test
-        if(Input.GetKeyDown(KeyCode.B)) {
-            List<string> x = new List<string>();
-            x.Add("11111111111");
-            x.Add("22222222222222");
-            x.Add("3333333333333333");
-            x.Add("44444444444");
-            x.Add("5555555");
-            x.Add("6666666");
-            x.Add("77777");
-            x.Add("88888");
-            x.Add("999999999999999");
-            x.Add("1010101010");
-            barragePanel.GetComponent<Barrage>().TriggerBarrage(x);
-        }
-        
+    {  
     }
 
     /***
@@ -69,8 +53,6 @@ public class GameManager : Singleton<GameManager>
     *   公共接口
     *
     ***/
-
-
 
     // 在指定位置创建一个platform
     public void CreatePlatform(Vector3 pos)
@@ -156,7 +138,6 @@ public class GameManager : Singleton<GameManager>
     public void Rebirth()
     {
         // Destroy(player);
-
         GameObject new_player = Instantiate(playerPrefab, spawnPos.position, Quaternion.identity);
         if(nowSavePoint != null)
         {
@@ -176,6 +157,16 @@ public class GameManager : Singleton<GameManager>
         cs.GetComponent<SpriteRenderer>().sprite = savePointOn;
         nowSavePoint = cs;
         spawnPos = cs.spawnPos;
+    }
+
+    public void TriggerBarrage(string situation) {
+        if (situation == "drop") {
+            barragePanel.GetComponent<Barrage>().dropBarrage();
+        } else if (situation == "first rebirth") {
+            barragePanel.GetComponent<Barrage>().FirstRebirthBarrage();
+        } else if (situation == "random") {
+            barragePanel.GetComponent<Barrage>().RandomBarrage();
+        }
     }
 
 }

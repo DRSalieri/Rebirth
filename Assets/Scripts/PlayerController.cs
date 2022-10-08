@@ -104,6 +104,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if(Input.GetButtonDown("Boom")) {
+            Fungus.Flowchart.BroadcastFungusMessage("rebirth");
+        }
+
+        if(Input.GetButtonDown("Interact")) {
+            GameManager.Instance.TriggerBarrage("random");
+        }
+
         if (_isControlled) {
 
 
@@ -328,6 +336,8 @@ public class PlayerController : MonoBehaviour
         {
             if (other.tag == "DeadZone")
             {
+                GameManager.Instance.TriggerBarrage("drop");
+                Fungus.Flowchart.BroadcastFungusMessage("drop");
                 Destroy(this.gameObject);
                 GameManager.Instance.Rebirth();
             }
@@ -350,7 +360,7 @@ public class PlayerController : MonoBehaviour
         {
             if(other.gameObject.tag == "Enemy")
             {
-                if(other.gameObject.GetComponent<EnemyMove>().isDied == false && other.contacts[0].normal.y <= 0.01f)
+                if(other.gameObject.GetComponent<EnemyMove>().isDied == false && other.contacts[0].normal.y <= 0.01f) 
                     Died(false);
             }
         }

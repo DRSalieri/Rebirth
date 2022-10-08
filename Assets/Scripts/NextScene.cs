@@ -32,6 +32,7 @@ public class NextScene : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         SetGlitch(0.5f);
         animator.SetBool("fadeIn", true);
+        Fungus.Flowchart.BroadcastFungusMessage("cut");
         animator.SetBool("fadeOut", false);
         yield return new WaitForSeconds(1.5f);
         AsyncOperation async = SceneManager.LoadSceneAsync(index);

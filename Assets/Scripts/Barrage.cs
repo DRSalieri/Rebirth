@@ -9,6 +9,38 @@ public class Barrage : MonoBehaviour
     public GameObject barragePanel;
     public List<Transform> _barrages;
 
+    public void dropBarrage() {
+        List<string> x = new List<string>();
+        x.Add("wwwwwww");
+        x.Add("What???");
+        x.Add("Looks lame...");
+        x.Add("What are you doing man");
+        x.Add("Go home thx!");
+        gameObject.GetComponent<Barrage>().TriggerBarrage(x);
+    }
+
+    public void FirstRebirthBarrage() {
+        List<string> x = new List<string>();
+        x.Add("What happend?");
+        x.Add("What???");
+        x.Add("It's giving up...");
+        x.Add("QAQ");
+        gameObject.GetComponent<Barrage>().TriggerBarrage(x);
+    }
+
+    public void RandomBarrage() {
+        List<string> x = new List<string>();
+        x.Add("wwwww");
+        x.Add("=w=");
+        x.Add("Go!Go!Go!!!");
+        x.Add("qwq");
+        x.Add("Fight on!!!");
+        int a = Random.Range(0, x.Count);
+        List<string> y = new List<string>();
+        y.Add(x[a]);
+        gameObject.GetComponent<Barrage>().TriggerBarrage(y);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +80,7 @@ public class Barrage : MonoBehaviour
             foreach (Transform t in barragePanel.transform) {
                 TextMeshProUGUI text = t.gameObject.GetComponent<TextMeshProUGUI>();
                 text.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f),Random.Range(0f, 1f), 1);
+                
                 text.text = barrages[index];
                 ++index;
                 _barrages.Add(t);

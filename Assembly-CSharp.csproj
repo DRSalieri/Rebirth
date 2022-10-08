@@ -38,6 +38,8 @@
   <ItemGroup>
      <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
      <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
+     <Compile Include="Assets\RebirthTrigger.cs" />
+     <Compile Include="Assets\RunTrigger.cs" />
      <Compile Include="Assets\Scripts\Barrage.cs" />
      <Compile Include="Assets\Scripts\ComputerStation.cs" />
      <Compile Include="Assets\Scripts\EnemyAnim.cs" />
@@ -51,6 +53,7 @@
      <Compile Include="Assets\Scripts\Env\TelescopicPlatform.cs" />
      <Compile Include="Assets\Scripts\Env\TelescopicSpikes.cs" />
      <Compile Include="Assets\Scripts\Env\VerticalPlatform.cs" />
+     <Compile Include="Assets\Scripts\FirstTrigger.cs" />
      <Compile Include="Assets\Scripts\Fragile.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GeneEndTrigger.cs" />
