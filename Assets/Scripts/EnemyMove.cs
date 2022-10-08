@@ -63,7 +63,7 @@ public class EnemyMove : MonoBehaviour
         if (_isControlled) {
             ControlUpdate();
         } else {
-            DefaultUpdate();
+            //DefaultUpdate();
         }
     }
 

@@ -36,8 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\ControlTrigger.cs" />
      <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
      <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
+     <Compile Include="Assets\LazerDialogue.cs" />
      <Compile Include="Assets\RebirthTrigger.cs" />
      <Compile Include="Assets\RunTrigger.cs" />
      <Compile Include="Assets\Scripts\Barrage.cs" />
@@ -68,6 +70,7 @@
      <Compile Include="Assets\Scripts\ShowStatus.cs" />
      <Compile Include="Assets\Scripts\UI_StatusImg.cs" />
      <Compile Include="Assets\Scripts\Utils\Singleton.cs" />
+     <Compile Include="Assets\firstNPC.cs" />
      <None Include="Assets\Kino\Glitch\Shader\DigitalGlitch.shader" />
      <None Include="Assets\Kino\Glitch\Shader\AnalogGlitch.shader" />
     <Reference Include="UnityEngine">
