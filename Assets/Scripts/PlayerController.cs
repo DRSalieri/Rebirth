@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource diedAudio;
     [SerializeField] private AudioSource jumpAudio;
 
-    private bool _isControlled = true;
 
     private void Start()
     {
@@ -85,22 +84,14 @@ public class PlayerController : MonoBehaviour
         SwitchShape(shape);
     }
 
-    public void ChangeControl(bool controlled) {
-        _isControlled = controlled;
-        if (_isControlled) {
-
-        } else {
-            rb.velocity = new Vector2(0, 0);
-        }
-    }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.C)) {
-            if (_isControlled) {
-                ChangeControl(false);
+            if (canOperate) {
+                canOperate = false;
             } else {
-                ChangeControl(true);
+                canOperate = true;
             }
         }
 
@@ -111,9 +102,6 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Interact")) {
             GameManager.Instance.TriggerBarrage("random");
         }
-
-        if (_isControlled) {
-
 
             if (canOperate == false)
                 return;
@@ -152,11 +140,11 @@ public class PlayerController : MonoBehaviour
             
 
             SwitchAnim();
-        }
+
     }
     private void FixedUpdate()
     {
-        if (_isControlled) {
+
             if (isDied)
                 return;
             if (rb == null || coll == null)
@@ -170,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
             Movement();
             Jump();
-        }
+
         
     }
 
